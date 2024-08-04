@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Discord User Data Fetcher</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body class="dark-mode">
+    <div class="toggle-switch">
+        <input type="checkbox" id="dark-mode-toggle" checked>
+        <label for="dark-mode-toggle">Dark Mode</label>
+    </div>
+    <div class="container">
+        <h1>Discord User Data Fetcher</h1>
+        <form action="/fetch_user" method="get">
+            <div class="input-field">
+                <label for="user_id">Enter User ID:</label>
+                <input type="text" id="user_id" name="user_id" required>
+            </div>
+            <div class="input-field">
+                <input type="submit" value="Fetch User Data">
+            </div>
+        </form>
+        {% if user_data %}
+        <div class="user-data">
+            <div class="user-info">
+                <div><span>Username:</span> {{ user_data.username }}</div>
+                <div><span>ID:</span> {{ user_data.id }}</div>
+                <div><span>Profile Color:</span> <span style="color: {{ user_data.profile_color }}">{{ user_data.profile_color }}</span></div>
+                <div><span>Status:</span> <span class="status-{{ user_data.status|lower }}">{{ user_data.status }}</span></div>
+                <div><span>Activities:</span> {{ user_data.activities|join(', ') }}</div>
+                <div><span>Nickname:</span> {{ user_data.nickname }}</div>
+                <div><span>Joined At:</span> {{ user_data.joined_at }}</div>
+                <div><span>Created At:</span> {{ user_data.created_at }}</div>
+                <div><span>Boosting Since:</span> {{ user_data.boosting_since }}</div>
+            </div>
+            <div class="user-avatar">
+                <img src="{{ user_data.avatar }}" alt="Avatar">
+            </div>
+        </div>
+        {% endif %}
+    </div>
+    <script>
+        const toggleSwitch = document.getElementById('dark-mode-toggle');
+        const body = document.body;
+        toggleSwitch.addEventListener('change', function() {
+            body.classList.toggle('dark-mode', toggleSwitch.checked);
+            body.classList.toggle('light-mode', !toggleSwitch.checked);
+        });
+    </script>
+</body>
+</html>

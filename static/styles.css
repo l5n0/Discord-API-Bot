@@ -1,0 +1,127 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 20px;
+    background-color: #333;
+    color: #f5f5f5;
+}
+
+.dark-mode {
+    background-color: #333;
+    color: #f5f5f5;
+}
+
+.light-mode {
+    background-color: #f5f5f5;
+    color: #333;
+}
+
+.container {
+    max-width: 600px;
+    margin: auto;
+    padding: 20px;
+    border: 1px solid #444;
+    border-radius: 10px;
+    background-color: #444;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.light-mode .container {
+    border-color: #ccc;
+    background-color: #fff;
+}
+
+.input-field {
+    margin-bottom: 20px;
+}
+
+.input-field label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.input-field input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #666;
+    border-radius: 5px;
+    background-color: #555;
+    color: #fff;
+    transition: background-color 0.3s, color 0.3s, border-color 0.3s;
+}
+
+.light-mode .input-field input {
+    background-color: #fff;
+    color: #000;
+    border-color: #ccc;
+}
+
+.input-field input[type="submit"] {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+.input-field input[type="submit"]:hover {
+    background-color: #45a049;
+}
+
+.dark-mode .input-field input[type="submit"] {
+    background-color: #3e8e41;
+}
+
+.dark-mode .input-field input[type="submit"]:hover {
+    background-color: #367c39;
+}
+
+.user-data {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.user-info {
+    flex-grow: 1;
+}
+
+.user-info div {
+    margin-bottom: 10px;
+}
+
+.user-info span {
+    font-weight: bold;
+}
+
+.user-avatar {
+    margin-left: 20px;
+}
+
+.user-avatar img {
+    border-radius: 50%;
+    width: 200px;
+    height: 200px;
+}
+
+.status-online {
+    color: green;
+}
+
+.status-idle {
+    color: yellow;
+}
+
+.status-dnd {
+    color: red;
+}
+
+.toggle-switch {
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 10px;
+}
+
+.toggle-switch label {
+    margin-left: 10px;
+    cursor: pointer;
+}
