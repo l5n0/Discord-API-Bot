@@ -1,5 +1,8 @@
 # Discord User Data Fetcher
 
+## Important
+It still has some bugs. I have to fix them, but at the moment it works. 
+
 ## Setup
 
 ### Prerequisites
